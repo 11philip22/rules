@@ -9,7 +9,7 @@ globs:
 
 ## Trust Boundaries
 
-- Treat CLI input, environment variables, filesystem paths, email contents, network responses, and SDK data as untrusted. Validate and normalize them at module boundaries before use.
+- Treat CLI input, environment variables, filesystem paths, email contents and network responses; validate and normalize them at module boundaries.
 
 ## Memory Safety
 
@@ -30,11 +30,11 @@ globs:
 
 ## Sensitive Data
 
-- Do not log or print secrets such as passwords, session tokens, confirmation links, or raw mailbox contents. Redact sensitive values in diagnostics and reports.
+- Do not log or print secrets such as passwords, session tokens, confirmation links, or raw mailbox contents; redact them in diagnostics and reports.
 
 ## Defensive Implementation
 
-- Prefer explicit bounds, overflow, and narrowing checks when working with sizes, handles, indexes, counts, and byte math.
-- Preserve exception safety. Prefer local temporaries and commit-at-end updates so failures do not leave partially-mutated state behind.
-- Surface failures with actionable messages that include the operation and stable identifiers, but do not leak sensitive data.
+- Prefer explicit bounds, overflow, and narrowing checks for sizes, handles, indexes, counts, and byte math.
+- Preserve exception safety; prefer local temporaries and commit-at-end updates.
+- Surface failures with actionable messages that include the operation and stable identifiers, but not sensitive data.
 - Swallow errors only for clearly documented best-effort cleanup paths.

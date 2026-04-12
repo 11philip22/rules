@@ -9,18 +9,18 @@ globs:
 
 ## Coverage Expectations
 
-- When changing behavior, add or update the narrowest relevant test if a test seam exists. If you cannot add coverage, call out the gap explicitly.
+- When changing behavior, add or update the narrowest relevant test. If you cannot add coverage, call out the gap.
 
 ## Test Design
 
-- Prefer deterministic tests that isolate filesystem, time, network, and SDK behavior behind wrappers or fakes instead of relying on live external services.
+- Prefer deterministic tests with wrappers or fakes over live filesystem, time, network, or external services.
 - Test public behavior at module boundaries rather than private implementation details.
 - Cover failure paths and edge cases, especially retries, timeouts, path handling, quota checks, resume behavior, and rotation flows.
 
 ## Test Data And Speed
 
-- Use temporary directories and synthetic file trees for scanner and upload-queue behavior instead of relying on developer-specific paths.
-- Keep tests fast and specific. Separate routine coverage from slower integration-style checks when both are needed.
+- Use temporary directories and synthetic file trees instead of developer-specific paths.
+- Keep tests fast and specific; separate routine coverage from slower integration checks when needed.
 
 ## Test Runner
 
