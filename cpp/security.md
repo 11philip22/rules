@@ -13,12 +13,12 @@ globs:
 
 ## Memory Safety
 
-- Never use C-style arrays; use `std::array` or `std::vector`.
+- Prefer `std::array` and `std::vector` over C-style arrays.
 - Avoid `reinterpret_cast` unless absolutely necessary.
 
 ## Buffer Safety
 
-- Use `std::string` over `char*`.
+- Prefer `std::string` and standard-library containers over raw character buffers.
 - Use `.at()` for bounds-checked access when safety matters.
 - Never use `strcpy`, `strcat`, or `sprintf`; use `std::string` or `fmt::format`.
 

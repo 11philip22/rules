@@ -9,13 +9,10 @@ globs:
 
 ## Ownership And APIs
 
-- Use RAII everywhere. Do not use manual `new` or `delete`.
-- Use `std::unique_ptr` for exclusive ownership.
-- Use `std::shared_ptr` only when shared ownership is truly needed.
-- Use `std::make_unique` and `std::make_shared` over raw `new`.
-- Use C++ allocation and object lifetime management instead of `malloc` or `free`.
-- Treat raw pointers as non-owning views unless a required external API forces a different boundary.
-- Express ownership and lifetime in types: prefer values, references, `std::unique_ptr`, and `std::shared_ptr` only when ownership is genuinely shared.
+- Use RAII; avoid manual `new`/`delete` and `malloc`/`free`.
+- Express ownership in types: prefer values and references, use `std::unique_ptr` for exclusive ownership, and `std::shared_ptr` only for real shared ownership.
+- Prefer `std::make_unique` and `std::make_shared` over raw `new`.
+- Treat raw pointers as non-owning views unless an external API requires a different boundary.
 - Pass cheap scalar types by value. Pass read-only string or buffer inputs as `std::string_view`, `std::span`, or `const&` as appropriate. Use output parameters only when an external API forces that shape.
 - Keep invalid states hard to represent. Prefer small focused types over loosely-related fields, sentinel values, or parallel containers.
 - Keep headers self-sufficient and minimal. Prefer forward declarations in headers when possible, and include full definitions in translation units that need them.
