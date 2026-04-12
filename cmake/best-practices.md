@@ -1,5 +1,5 @@
 ---
-paths:
+globs:
   - "CMakeLists.txt"
   - "**/CMakeLists.txt"
   - "*.cmake"

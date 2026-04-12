@@ -1,5 +1,5 @@
 ---
-paths:
+globs:
   - "src/**/*.{h,hh,hpp,hxx}"
   - "include/**/*.{h,hh,hpp,hxx}"
   - "tests/**/*.{h,hh,hpp,hxx}"
@@ -9,7 +9,7 @@ paths:
 
 ## Header Guards
 
-- All headers in this project must use traditional header guards, not `#pragma once`.
+- All project-owned headers must use traditional header guards, not #pragma once.
 - Prefer guard macros derived from the header name in `UPPER_SNAKE_CASE`.
 - Example:
 

@@ -1,5 +1,5 @@
 ---
-paths:
+globs:
   - "src/**/*.{cc,cpp,cxx,h,hh,hpp,hxx,ipp,inl}"
   - "include/**/*.{cc,cpp,cxx,h,hh,hpp,hxx,ipp,inl}"
   - "tests/**/*.{cc,cpp,cxx,h,hh,hpp,hxx,ipp,inl}"
@@ -28,7 +28,7 @@ paths:
 - Prefer standard library facilities over custom utilities unless a wrapper around a required dependency is the point of the code.
 - Prefer expressive standard types such as `std::string_view`, `std::span`, `std::optional`, and `std::variant` when they clarify ownership or intent.
 - Prefer `enum class`, `constexpr`, `constinit`, `[[nodiscard]]`, and `noexcept` when they make contracts clearer and prevent mistakes.
-- Use `auto` when the initializer makes the type obvious or the spelled-out type is noisy. Keep explicit types where they clarify ownership, narrowing, or API boundaries.
+- Use auto for local variables when the initializer directly shows the type, such as constructor calls, casts, or iterator-returning expressions. Prefer explicit types when they make ownership, narrowing, or API boundaries clearer.
 - Use structured bindings when unpacking pair-like values, for example `auto [key, value] = map_entry;`.
 - Prefer range-based `for` and standard algorithms over index-heavy or stateful loops when readability improves.
 

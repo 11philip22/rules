@@ -1,5 +1,5 @@
 ---
-paths:
+globs:
   - "src/**/*.{cc,cpp,cxx,h,hh,hpp,hxx,ipp,inl}"
   - "include/**/*.{cc,cpp,cxx,h,hh,hpp,hxx,ipp,inl}"
   - "tests/**/*.{cc,cpp,cxx,h,hh,hpp,hxx,ipp,inl}"
