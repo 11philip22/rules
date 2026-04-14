@@ -7,6 +7,7 @@ globs:
 # Dockerfile
 
 - Use multi-stage builds with builder images so build tooling stays out of the runtime image.
+- Pin image versions to at least the minor version, for example `2.5-alpine` not `2-alpine`.
 - Keep each container to one concern; one main process is the default, with exceptions like init processes or well-understood worker models when they still serve that single concern.
 - Order instructions for cache reuse: stable steps early, frequently changing steps late.
 - Prefer `COPY` over `ADD`; use `ADD` only for intentional local tar auto-extraction, never for remote URLs.
