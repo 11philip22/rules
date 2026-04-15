@@ -108,42 +108,7 @@ class Point(NamedTuple):
 ## Context Managers
 
 - Use `with` for files and other resources instead of manual cleanup.
-- Use `@contextmanager` for small scoped helpers.
-- Use class-based context managers for stateful setup and teardown such as transactions.
-- Return `False` from `__exit__` unless suppressing exceptions is intentional.
-
-```python
-import time
-from contextlib import contextmanager
-
-
-def process_file(path: str) -> str:
-    with open(path) as f:
-        return f.read()
-
-
-@contextmanager
-def timer(name: str):
-    start = time.perf_counter()
-    yield
-    print(f"{name} took {time.perf_counter() - start:.4f} seconds")
-
-
-class DatabaseTransaction:
-    def __init__(self, connection):
-        self.connection = connection
-
-    def __enter__(self):
-        self.connection.begin_transaction()
-        return self
-
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        if exc_type is None:
-            self.connection.commit()
-        else:
-            self.connection.rollback()
-        return False
-```
+- Use `@contextmanager` or class-based context managers when scoped setup and teardown make the code clearer.
 
 ## Decorators
 
