@@ -6,14 +6,7 @@ globs:
 
 # Python Testing
 
-## Framework
-
-- Use **pytest** as the testing framework.
-
-## Coverage
-
-- Run coverage with `pytest --cov=src --cov-report=term-missing`.
-
-## Organization
-
-- Use `pytest.mark` for test categorization such as `@pytest.mark.unit` and `@pytest.mark.integration`.
+- When changing behavior, add or update the narrowest relevant test.
+- Prefer deterministic tests over live network calls, real time, or external services when practical.
+- Keep tests focused and readable; cover the behavior under change and relevant failure paths.
+- Follow the repo's test framework, layout, fixtures, and marker conventions.

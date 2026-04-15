@@ -6,12 +6,5 @@ globs:
 
 # Python Coding Style
 
-## Standards
-
 - Follow **PEP 8** conventions.
-
-## Tooling
-
-- Use **black** for code formatting.
-- Use **isort** for import sorting.
-- Use **ruff** for linting.
+- Use the repo's configured formatter and linter; if unspecified, prefer **black** and **ruff**.
