@@ -32,7 +32,6 @@ globs:
 ## Concurrency Patterns
 
 - Keep callbacks and notification handlers light; hand off heavy work and return promptly.
-- Prefer `std::jthread` for long-running worker threads and `std::stop_token` for cooperative cancellation.
 - Keep lock scope tight and document which shared state a mutex or atomic protects.
 - Use atomics only for small independent state transitions; protect multi-field invariants with a mutex.
 - Do not let exceptions cross thread boundaries; catch them there and convert them into explicit results, errors, or logs.

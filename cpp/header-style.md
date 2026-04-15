@@ -11,9 +11,3 @@ globs:
 
 - All project-owned headers must use header guards, not `#pragma once`.
 - Prefer guard macros derived from the header name in `UPPER_SNAKE_CASE`.
-
-
-```cpp
-#ifndef MY_HEADER_H
-#define MY_HEADER_H
-```
