@@ -42,13 +42,10 @@ some_module.setup()  # What does this do?
 
 ## Type Hints
 
-- Use type annotations on function signatures.
-- Annotate parameters, return values, and structured inputs explicitly.
-- On Python 3.9+, prefer built-in generics such as `list[str]` and `dict[str, int]`.
-- On Python 3.10+, prefer `User | None`; on older versions use `Optional[User]`.
-- On Python 3.8 and earlier, use `typing` forms such as `List[str]` and `Dict[str, int]`.
-- Use type aliases for repeated complex shapes such as `JSON = Union[...]`.
-- Use `TypeVar` for generic helpers.
+- Use type annotations on input parameters.
+- Annotate return values explicitly.
+- Prefer clear modern built-in generics when the project's Python version supports them.
+- Use type aliases and `TypeVar` when they make repeated or generic types easier to read.
 
 ## Comprehensions And Generators
 
