@@ -9,11 +9,6 @@ globs:
 ## Standards
 
 - Follow **PEP 8** conventions.
-- Use **type annotations** on all function signatures.
-
-## Data Modeling
-
-- Prefer immutable data structures such as `@dataclass(frozen=True)` and `NamedTuple`.
 
 ## Tooling
 
