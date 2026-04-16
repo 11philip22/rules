@@ -35,7 +35,12 @@ globs:
 - Use `Result<T, E>` and `?` for propagation; do not use `unwrap()` in production code.
 - In libraries, prefer typed errors such as `thiserror`; in applications, prefer `anyhow` for flexible context.
 - Add context with `.with_context(...)` when it improves diagnostics.
+- Prefer `Option` and `Result` combinators over deeply nested `match` blocks when they make the code clearer.
 - Reserve `unwrap()` and `expect()` for tests and truly unreachable states.
+
+## API Contracts
+
+- Mark important return values `#[must_use]` when ignoring them is likely a bug.
 
 ## Control Flow
 
