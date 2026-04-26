@@ -49,3 +49,8 @@ Notes
 - Hidden directories are excluded by the plugin
 - Rule files are discovered recursively
 - Frontmatter is optional, but omitted frontmatter means the rule is always included
+
+References
+----------
+
+- https://github.com/affaan-m/everything-claude-code/tree/main/rules
