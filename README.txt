@@ -1,54 +1,58 @@
 OpenCode Rules Repository
 =========================
 
-This repository contains Markdown rule files for the `opencode-rules` plugin.
-The plugin reads these files and injects matching rules into agent system prompts.
+This repository contains Markdown rule files for the `opencode-rules`
+plugin. The plugin discovers these files, matches them against the active
+workspace, and injects the applicable guidance into agent system prompts.
 
-What This Repo Contains
------------------------
+Contents
+--------
 
-- `cpp/` for C++ rules
-- `python/` for Python rules
-- `docker/` for Docker and Compose rules
-- `cmake/` for CMake rules
+- `cpp/` - C++ style, naming, headers, patterns, testing, and security
+- `rust/` - Rust style, patterns, testing, and security
+- `python/` - Python style, patterns, testing, security, and comprehensions
+- `cmake/` - CMake project and target best practices
+- `docker/` - Dockerfile and Docker Compose rules
 
-How `opencode-rules` Uses These Files
--------------------------------------
+How The Plugin Uses These Files
+-------------------------------
 
 - Reads `.md` and `.mdc` files recursively from configured rule directories
+- Ignores hidden directories
+- Uses YAML frontmatter such as `globs`, `agent`, and `match` to decide when
+  a rule applies
 - Treats files without frontmatter as unconditional rules
-- Uses YAML frontmatter such as `globs`, `keywords`, `tools`, and `match` to decide when a rule applies
 
 Recommended Use
 ---------------
 
-- Put this repo, or a symlink to it, under `~/.config/opencode/rules/`
-- Or copy selected files into a project's `.opencode/rules/` directory
-
-Example:
+Put this repo, or a symlink to it, under the OpenCode rules directory:
 
   ln -s /path/to/this/repo ~/.config/opencode/rules
 
-Rule Design Conventions In This Repo
-------------------------------------
+For project-specific guidance, copy only the relevant files into:
 
-- Keep always-on rules short, principle-based, and cheap to inject
+  .opencode/rules/
+
+Rule Design
+-----------
+
+- Keep broad rules short, principle-based, and cheap to inject
 - Put specialized guidance in separate files with narrower matching
-- Avoid long examples in broad rules; examples belong in docs or skills
 - Prefer behavior-shaping rules over language tutorials or reference material
+- Avoid long examples in broad rules; examples belong in docs or skills
+- Match rules with `globs` whenever the guidance only applies to specific
+  languages, tools, or file types
 
 Current Structure
 -----------------
 
-- Broad default guidance lives in files such as `coding-style.md`, `patterns.md`, `security.md`, and `testing.md`
-- More situational guidance is split into narrower files, for example `python/comprehensions-generators.md`
-
-Notes
------
-
-- Hidden directories are excluded by the plugin
-- Rule files are discovered recursively
-- Frontmatter is optional, but omitted frontmatter means the rule is always included
+- `coding-style.md` covers formatting, naming, and language conventions
+- `patterns.md` covers design and implementation preferences
+- `testing.md` covers test structure and expectations
+- `security.md` covers defensive coding and common risk areas
+- Narrow files, such as `cpp/file-names.md` and
+  `python/comprehensions-generators.md`, cover situational guidance
 
 References
 ----------
