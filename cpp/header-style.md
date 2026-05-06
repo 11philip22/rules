@@ -3,6 +3,10 @@ globs:
   - "src/**/*.{h,hh,hpp,hxx}"
   - "include/**/*.{h,hh,hpp,hxx}"
   - "tests/**/*.{h,hh,hpp,hxx}"
+agent:
+  - build
+  - cpp-reviewer
+match: all
 ---
 
 # C++ Header Style

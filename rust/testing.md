@@ -1,6 +1,10 @@
 ---
 globs:
   - "**/*.rs"
+agent:
+  - build
+  - rust-reviewer
+match: all
 ---
 
 # Rust Testing

@@ -7,6 +7,9 @@ keywords:
   - "comprehension"
   - "iterator"
   - "stream"
+agent:
+  - build
+  - python-reviewer
 match: all
 ---
 

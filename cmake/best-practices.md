@@ -4,6 +4,10 @@ globs:
   - "**/CMakeLists.txt"
   - "*.cmake"
   - "**/*.cmake"
+agent:
+  - build
+  - cpp-reviewer
+match: all
 ---
 
 # CMake Best Practices

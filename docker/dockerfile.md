@@ -2,6 +2,9 @@
 globs:
   - "Dockerfile"
   - "**/Dockerfile"
+agent:
+  - build
+match: all
 ---
 
 # Dockerfile

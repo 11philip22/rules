@@ -2,6 +2,9 @@
 globs:
   - "docker-compose.yml"
   - "**/docker-compose.yml"
+agent:
+  - build
+match: all
 ---
 
 # Docker Compose
